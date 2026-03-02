@@ -1,0 +1,57 @@
+Function menu()
+    Display options:
+        a - Add student
+        d - Delete student
+        u - Update student
+        s - Show student info
+
+Function add_student()
+    Input student_id, first_name, last_name, age, grade, registration_date
+    Input lessons (comma separated)
+    Insert student into students table
+    For each lesson:
+        Insert lesson into lessons table if not exists
+        Get lesson_id
+        Insert into student_lessons(student_id, lesson_id)
+    Display "Student added successfully"
+
+Function delete_student()
+    Input student_id
+    If student exists:
+        Delete from student_lessons where student_id
+        Delete from students where student_id
+        Display "Student deleted successfully"
+    Else:
+        Display "Student not found"
+
+Function update_student()
+    Input student_id
+    If student exists:
+        Input new data (leave blank to keep old)
+        Update student info
+        Input new lessons (optional)
+        If lessons provided:
+            Delete old entries in student_lessons
+            Insert new student_lessons entries
+        Display "Student updated successfully"
+    Else:
+        Display "Student not found"
+
+Function show_student()
+    Input student_id
+    If student exists:
+        Display student info
+        Get lessons for student
+        Display lessons
+    Else:
+        Display "Student not found"
+
+Main loop:
+    Loop forever:
+        menu()
+        Input choice
+        If choice == 'a': call add_student()
+        Else if choice == 'd': call delete_student()
+        Else if choice == 'u': call update_student()
+        Else if choice == 's': call show_student()
+        Else: display "Invalid choice"

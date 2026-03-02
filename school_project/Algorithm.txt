@@ -1,0 +1,10 @@
+Start
+Display menu
+Input choice
+If choice == 'a' -> add student + add lessons
+If choice == 'd' -> delete student
+If choice == 'u' -> update student
+If choice == 's' -> show student info
+Else -> show invalid choice
+Loop back to menu until exit
+End
